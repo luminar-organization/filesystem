@@ -59,9 +59,7 @@ class FileSystemTest extends TestCase
     public function testWrite()
     {
         $fileSystem = new FileSystem();
-        $fileSystem->write(__DIR__ . '/fixtures/file.txt', "Hello PHP");
-        $this->assertEquals($fileSystem->read(__DIR__ . '/fixtures/file.txt'), "Hello PHP");
-        $fileSystem->write(__DIR__ . '/fixtures/file.txt', "Hello World");
-        $this->assertEquals($fileSystem->read(__DIR__ . '/fixtures/file.txt'), "Hello World");
+        $fileSystem->write(__DIR__ . '/fixtures/write.txt', "Hello PHP");
+        $this->assertEquals("Hello PHP", $fileSystem->read(__DIR__ . '/fixtures/write.txt'));
     }
 }

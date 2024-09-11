@@ -63,6 +63,6 @@ class FileMetadataTest extends TestCase
     public function testMimeType()
     {
         $fileMetadata = new FileMetadata();
-        $this->assertTrue($fileMetadata->isMimeType(__DIR__ . '/fixtures/file.txt', 'text/plain'));
+        $this->assertTrue($fileMetadata->isMimeType(__DIR__ . '/fixtures/mime.txt', 'text/plain'));
     }
 }
