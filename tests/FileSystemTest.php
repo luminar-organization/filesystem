@@ -26,9 +26,8 @@ class FileSystemTest extends TestCase
     {
         $fileSystem = new FileSystem();
         $fileSystem->copy(__DIR__ . '/fixtures/file.txt', __DIR__ . '/fixtures/copy.txt');
-        $exists = $fileSystem->exists(__DIR__ . '/fixtures/copy.txt');
-        echo error_get_last()['message'];
-        if(error_get_last()['message'] !== 'Permission denied') {
+        if(error_get_last()['message'] !== 'copy(' . __DIR__ . '/fixtures/file.txt): Failed to open stream: Permission denied') {
+            $exists = $fileSystem->exists(__DIR__ . '/fixtures/copy.txt');
             $this->assertTrue($exists);
         }
         $fileSystem->delete(__DIR__ . '/fixtures/copy.txt');
