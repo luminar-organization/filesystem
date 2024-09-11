@@ -1,5 +1,7 @@
 # File System Library
 
+![Tests Status](https://img.shields.io/github/actions/workflow/status/luminar-organization/filesystem/tests.yml?label=Tests)
+
 This repository contains a comprehensive PHP Luminar Framework for managing file systems securely and efficiently. The library provides various utilities for handling file operations, integrity checks, content searching, metadata management, and more.
 
 ## Overview
