@@ -26,7 +26,7 @@ class FileSystemTest extends TestCase
     {
         $fileSystem = new FileSystem();
         $fileSystem->copy(__DIR__ . '/fixtures/file.txt', __DIR__ . '/fixtures/copy.txt');
-        $this->assertTrue($fileSystem->exists(__DIR__ . '/fixtures/copy.txt'));
+        $this->assertTrue($fileSystem->exists(__DIR__ . '/fixtures/copy.txt'), error_get_last());
         $fileSystem->delete(__DIR__ . '/fixtures/copy.txt');
     }
 
