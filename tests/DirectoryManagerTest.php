@@ -26,4 +26,14 @@ class DirectoryManagerTest extends TestCase
         $dir->delete();
         $this->assertFalse($directoryManager->directoryExists(__DIR__ . '/fixtures/example'));
     }
+
+    /**
+     * @return void
+     */
+    public function testDirScan()
+    {
+        $directoryManager = new DirectoryManager();
+        $files = $directoryManager->scan(__DIR__ . '/fixtures/');
+        $this->assertNotNull($files);
+    }
 }

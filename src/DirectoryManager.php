@@ -4,6 +4,7 @@ namespace Luminar\FileSystem;
 
 use Luminar\FileSystem\Exceptions\FileManagerException;
 use Luminar\FileSystem\Models\Directory;
+use Luminar\FileSystem\Models\File;
 
 class DirectoryManager
 {
@@ -32,7 +33,11 @@ class DirectoryManager
         $files = scandir($path);
         $response = [];
         foreach($files as $file) {
-            $response[] = new Directory($file);
+            if(is_dir($path . $file)) {
+                $response[$file] = new Directory($file);
+            } else {
+                $response[$file] = new File($file);
+            }
         }
 
         return $response;
