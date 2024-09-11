@@ -25,6 +25,21 @@ class DirectoryManager
 
     /**
      * @param string $path
+     * @return array
+     */
+    public function scan(string $path): array
+    {
+        $files = scandir($path);
+        $response = [];
+        foreach($files as $file) {
+            $response[] = new Directory($file);
+        }
+
+        return $response;
+    }
+
+    /**
+     * @param string $path
      * @return Directory
      * @throws FileManagerException
      */
