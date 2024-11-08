@@ -27,6 +27,15 @@ class Directory
     }
 
     /**
+     * @return string
+     */
+    public function getDir(): string
+    {
+        return $this->dir;
+    }
+
+
+    /**
      * @return void
      * @throws FileManagerException
      */
